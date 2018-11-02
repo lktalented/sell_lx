@@ -16,6 +16,12 @@ spring:
 
 logging:
   config: classpath:logback-seller_lx.xml
+wechat:
+  mpAppId: wxb49165de84009517
+  mpAppSecret: b7f660477e30f855a8aa9c210aac0773
+
+projectUrl:
+  wechatMpAuthorize: http://lktalented.natapp1.cc
 #  pattern:
 #    console: "%d - %msg%n"
 ##  file: E:\springboot-imooc-logs\sell.log
