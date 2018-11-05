@@ -19,6 +19,11 @@ logging:
 wechat:
   mpAppId: wxb49165de84009517
   mpAppSecret: b7f660477e30f855a8aa9c210aac0773
+  mchId: 1483469312
+  mchKey: 06C56A89949D617xxxxxxxxxxx
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://lktalented.natapp1.cc/seller_lx/pay/notify
+
 
 projectUrl:
   wechatMpAuthorize: http://lktalented.natapp1.cc
