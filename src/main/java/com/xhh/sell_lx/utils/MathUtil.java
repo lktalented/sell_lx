@@ -1,22 +1,22 @@
 package com.xhh.sell_lx.utils;
 
 /**
- * Created by 廖师兄
- * 2017-07-09 16:56
+ * double类型比较大小
+ * luokai
+ * 2018/11/6 0006 下午 4:57
  */
 public class MathUtil {
-
     private static final Double MONEY_RANGE = 0.01;
 
     /**
-     * 比较2个金额是否相等
+     * 比较两个金额是否相等
      * @param d1
      * @param d2
      * @return
      */
-    public static Boolean equals(Double d1, Double d2) {
-        Double result = Math.abs(d1 - d2);
-        if (result < MONEY_RANGE) {
+    public static Boolean equals(Double d1,Double d2){
+        Double result = Math.abs(d1-d2);
+        if (result < MONEY_RANGE){
             return true;
         }else {
             return false;

@@ -4,13 +4,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * Created by 廖师兄
- * 2017-07-04 01:30
+ * 格式化json字符串
+ * luokai
+ * 2018/11/6 0006 上午 9:48
  */
 public class JsonUtil {
-
-    public static String toJson(Object object) {
-        GsonBuilder gsonBuilder = new GsonBuilder();
+    public static String toJson(Object object){
+        GsonBuilder gsonBuilder =new GsonBuilder();
         gsonBuilder.setPrettyPrinting();
         Gson gson = gsonBuilder.create();
         return gson.toJson(object);

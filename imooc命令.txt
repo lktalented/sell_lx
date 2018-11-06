@@ -21,11 +21,12 @@ http://lktalented.natapp1.cc/seller_lx/wechat/authorize
 回到目录：/opt/code/sell_fe_buyer
 重新构建前端项目：npm run build
 
+修改 wechatPayUrl：
+http://lktalented.natapp1.cc/seller_lx/pay/create
+
+
 ls -al dist/
 cp -r dist/* /opt/data/wwwroot/sell/
-
-
-
 
 外网映射地址：
 http://lktalented.natapp1.cc
