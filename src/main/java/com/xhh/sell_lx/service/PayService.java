@@ -1,6 +1,7 @@
 package com.xhh.sell_lx.service;
 
 import com.lly835.bestpay.model.PayResponse;
+import com.lly835.bestpay.model.RefundResponse;
 import com.xhh.sell_lx.dto.OrderDTO;
 
 /**
@@ -13,4 +14,5 @@ public interface PayService {
 
     PayResponse notify(String notifyData);
 
+    RefundResponse refund(OrderDTO orderDTO);
 }

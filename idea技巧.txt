@@ -1,0 +1,162 @@
+alt + 数字 ：切换模块
+ctrl + alt + [ 切换到上一个项目
+ctrl + alt + ] 切换到下一个项目
+ctrl + shift + A 发现快捷键
+ctrl + E 最近文件
+ctrl + shift + E 最近修改文件
+ctrl + shift + BackSpace 最近编辑处
+alt + 左箭头（右箭头）   最近浏览文件
+ctrl + F11 书签标记
+ctrl + 标记数字  书签标记跳转
+alt + 2  Favorites模块
+alt + shift +F 添加文件至favorites模块
+
+alt + 1 和 esc 左边菜单栏和编辑区的切换
+
+ctrl + N 查找class 
+
+ctrl + shift +N 寻找file
+
+
+ctrl + shift + alt + N 寻找方法，属性等符号
+
+ctrl + shift + F 通用搜索 
+ 
+
+live templates 自定义代码模板
+
+自带常用模板：
+
+ctrl + j ：查看模板列表
+
+psf    public static final 
+psfi   public static final int 
+psfs   public static final string
+psvm   public static void main(String[] args) {}
+ps     private String  $name$ 自定义
+psc    private String  $name$ 带注释 自定义
+pi     private Integer $name$ 自定义
+pic    private Integer $name$ 带注释 自定义
+
+编辑操作：
+ctrl + y 删除整行
+shift + enter 上空一行
+ctrl  + enter 下空一行
+
+
+postfix：
+
+100.fori     for (int i = 0; i < 100; i++) {}
+
+100.sout     System.out.println(100);
+
+name.field   private final String name;
+             public AA(String name){this.name = name;}
+
+s.return     public String ssss(){
+                 String s ="aaaaaa";
+                 return s;
+               }
+user.nn      public void(String user){
+                 if (user != null) {
+              
+               }
+             }
+
+
+alt + enter 智能提示 （如:自动创建函数，list repalce，字符串format或build，实现接口，单词拼写，导包）
+
+代码重构：
+
+sfift + F6 重构变量（在一个函数内批量修改传入参数名称）,修改文件名
+ctrl + F6 （alt + enter 亦可行）重构方法（在一个函数内可添加或减少传入参数，对应引用处同时变化）
+
+抽取：
+
+ctrl + alt + V 抽取变量
+ctrl + alt + C 抽取静态常量
+ctrl + alt + F 抽取成员变量 
+
+ctrl + alt + P 抽取方法参数
+ctrl + alt + M 抽取函数
+
+local history： 
+
+show history 可对比本地文件改动之处，并可撤销修改
+put  label   设置修该标签，标记每次修改截止位置
+
+spring的关联：
+ctrl + alt +shift + S  -  Facets - spring  - confirm   
+将所有spring中的关联关系以图标展现，可直接点击查看 
+
+database的关联：
+可直接在idea中查看数据库表，同时编写mybatis.xml时可提示表名和字段名，减少错误。
+并且可以方便的重构字段，修改字段名时，同步修改xml，类属性。
+
+断点调试：
+ctrl + F8 打断点
+shift + F9  debug启动
+shift + F10 run启动
+F8 单步运行 step over
+F9 跳至下一断点
+ctrl + shift + F8 查看所有断点 条件断点
+mute breakPoints  禁止所有断点 接 F9走完
+
+alt + F8 表达式求值（选中需要计算的变量，填写java表达式，点击evaluate）
+alt + F9 运行到指定行
+
+在参数下F2，可set value ，测试运行结果
+
+
+alt + shift + F9   从已运行列表中选取debug 
+
+ctrl + shift + F10 运行当前方法
+alt + shift + F10  从已运行列表中选取run 
+
+edit configuration 编辑启动配置
+
+其他常用操作：
+alt + insert 在当前文件所在文件夹下创建文件
+F5  复制当前文件
+F6  移动当前文件
+
+文件上ctrl + c  可复制文件名
+文件上ctrl + shift + c  可复制完整文件路径
+
+ctrl + shift + v 可调出剪切板，查看最近复制的内容
+
+ctrl + alt + s  settings调出
+
+ctrl + F12  查看 file structure
+
+ctrl + alt + shift + u 或 ctrl + alt + u 查看maven依赖结构，查看类与类或接口的继承关系（便于分析源码）
+
+ctrl + H  在Bean上点击，可查看bean的依赖和被依赖关系
+
+ctrl + alt + H 在方法名上点击，可查看方法的调用和被调用的关系
+
+ctrl + F 选择jar
+
+单击 跳至pom文件对应处
+
+alt + 9 打开版本控制面板
+
+文件右键 - subversion - annotate 可查看当前文件历史修改时间及情况 
+
+alt + insert get/set/constructor/toString 快捷键
+
+ctrl + shift + T:对某个类直接创建测试类 
+
+修改自动补全快键键：
+
+导航框中点击 KeyMap。 
+接着在右边的树型框中选择 Main menu –> Code –> Completion.  
+1. 移除原来的Cycle Expand Word 的 Alt+/ 快捷键绑定。 
+2. 在 Basic 上点击右键,去除原来的 Ctrl+空格 绑定,然后添加 Alt+/ 快捷键
+
+plugins - browse repositories - emacsIDEAs - install - restart  安装emacsIDEAs 
+manage keymaps - plugins - emacsIDEAs  - AceJumpWord 右键设置快捷方式 （可全局快速定位任意位置）
+
+
+ctrl + alt + L : 代码格式化 
+ctrl + alt + B : 进入实现方法

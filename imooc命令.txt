@@ -40,18 +40,7 @@ http://lktalented.natapp1.cc/seller_lx/weixin/auth/?code=0712Iyis0KFJje1WTJis0uA
 
 http://lktalented.natapp1.cc/seller_lx/wechat/authorize?returnUrl=www.baidu.com
 
-切记：
-新微信号：
-账号：lktalented666
-密码：q987w654
 
-微信公众平台：
-
-账号：kluo_wh@outlook.com
-密码：q987w654
-
-账号2：715466676@qq.com
-密码2：q987w654
 
 
 
