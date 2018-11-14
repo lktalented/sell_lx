@@ -3,7 +3,7 @@ vim /usr/local/nginx/conf/nginx.conf
 nginx -s reload 重启nginx
 
 前端联调：
-http://192.168.0.117/#/order
+http://192.168.0.130/#/order
 打开调试面板：
 在 console面板中，添加cookie：document.cookie="openid=abc123"
 再次访问：http://192.168.0.130
@@ -28,6 +28,20 @@ http://lktalented.natapp1.cc/seller_lx/pay/create
 ls -al dist/
 cp -r dist/* /opt/data/wwwroot/sell/
 
+
+设置虚拟机静态IP：
+设置网络连接方式为“桥接网卡”
+进入虚拟机以下文件进行修改：
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+修改步骤：
+ONBOOT=yes 这里指系统启动时就启动网络服务
+#BOOTPROTO=dhcp 将动态分配ip地址注释
+BOOTPROTO=static 使用静态ip地址
+IPADDR=192.168.0.130 ip地址
+NETMASK=255.255.255.0 子网掩码
+GATEWAY=192.168.0.1 网关
+
+
 外网映射地址：
 http://lktalented.natapp1.cc
 
@@ -36,7 +50,7 @@ https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb49165de84009517&red
 
 http://lktalented.natapp1.cc/seller_lx/weixin/auth/?code=0712Iyis0KFJje1WTJis0uAyis02Iyi6
 
- https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxb49165de84009517&secret=b7f660477e30f855a8aa9c210aac0773&code=0712Iyis0KFJje1WTJis0uAyis02Iyi6&grant_type=authorization_code
+https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxb49165de84009517&secret=b7f660477e30f855a8aa9c210aac0773&code=0712Iyis0KFJje1WTJis0uAyis02Iyi6&grant_type=authorization_code
 
 http://lktalented.natapp1.cc/seller_lx/wechat/authorize?returnUrl=www.baidu.com
 
