@@ -2,6 +2,9 @@ package com.xhh.sell_lx.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.xhh.sell_lx.dataobject.OrderDetail;
+import com.xhh.sell_lx.enums.OrderStatusEnum;
+import com.xhh.sell_lx.enums.PayStatusEnum;
+import com.xhh.sell_lx.utils.EnumUtil;
 import com.xhh.sell_lx.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
@@ -50,4 +53,12 @@ public class OrderDTO {
     private Date updateTime;
 
     List<OrderDetail> orderDetailList;
+
+    public OrderStatusEnum getOrderStatusEnum(){
+        return EnumUtil.getByCode(orderStatus,OrderStatusEnum.class);
+    }
+
+    public PayStatusEnum getPayStatusEnum(){
+        return EnumUtil.getByCode(payStatus,PayStatusEnum.class);
+    }
 }
