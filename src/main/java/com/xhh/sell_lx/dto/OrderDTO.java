@@ -1,5 +1,6 @@
 package com.xhh.sell_lx.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.xhh.sell_lx.dataobject.OrderDetail;
 import com.xhh.sell_lx.enums.OrderStatusEnum;
@@ -54,10 +55,12 @@ public class OrderDTO {
 
     List<OrderDetail> orderDetailList;
 
+    @JsonIgnore
     public OrderStatusEnum getOrderStatusEnum(){
         return EnumUtil.getByCode(orderStatus,OrderStatusEnum.class);
     }
 
+    @JsonIgnore
     public PayStatusEnum getPayStatusEnum(){
         return EnumUtil.getByCode(payStatus,PayStatusEnum.class);
     }

@@ -1,6 +1,8 @@
 package com.xhh.sell_lx.dataobject;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.xhh.sell_lx.enums.ProductStatusEnum;
+import com.xhh.sell_lx.utils.EnumUtil;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -51,4 +53,9 @@ public class ProductInfo {
 //    public ProductStatusEnum getProductStatusEnum() {
 //        return EnumUtil.getByCode(productStatus, ProductStatusEnum.class);
 //    }
+
+    @JsonIgnore
+    public ProductStatusEnum getProductStatusEnum(){
+        return EnumUtil.getByCode(productStatus,ProductStatusEnum.class);
+    }
 }
