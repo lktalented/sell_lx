@@ -1,17 +1,27 @@
 package com.xhh.sell_lx.controller;
 
+import com.xhh.sell_lx.dataobject.ProductCategory;
 import com.xhh.sell_lx.dataobject.ProductInfo;
 import com.xhh.sell_lx.exception.SellException;
+import com.xhh.sell_lx.form.ProductForm;
+import com.xhh.sell_lx.service.CategoryService;
 import com.xhh.sell_lx.service.ProductService;
+import com.xhh.sell_lx.utils.KeyUtil;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,6 +36,9 @@ public class SellerProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private CategoryService categoryService;
 
     @GetMapping("/list")
     public ModelAndView list(@RequestParam(value = "page", defaultValue = "1") Integer page,
@@ -54,7 +67,7 @@ public class SellerProductController {
             productService.onSale(productId);
         } catch (SellException e) {
             map.put("msg",e.getMessage());
-            map.put("url","/seller_lx/sell/product/list");
+            map.put("url","/seller_lx/seller/product/list");
             return new ModelAndView("common/error",map);
         }
         map.put("url","/seller_lx/seller/product/list");
@@ -70,13 +83,58 @@ public class SellerProductController {
     @GetMapping("/off_sale")
     public ModelAndView offSale(@RequestParam("productId") String productId,
                              Map<String, Object> map){
-        System.out.println(123);
 
         try {
             productService.offSale(productId);
         } catch (SellException e) {
             map.put("msg",e.getMessage());
-            map.put("url","/seller_lx/sell/product/list");
+            map.put("url","/seller_lx/seller/product/list");
+            return new ModelAndView("common/error",map);
+        }
+        map.put("url","/seller_lx/seller/product/list");
+        return new ModelAndView("common/success",map);
+    }
+
+    @GetMapping("/index")
+    public ModelAndView index(@RequestParam(value = "productId",required = false) String productId ,
+                              Map<String,Object>map){
+        if (!StringUtils.isEmpty(productId)){
+            ProductInfo productInfo = productService.findOne(productId);
+            map.put("productInfo",productInfo);
+        }
+        //查询所有的类目
+        List<ProductCategory> categoryList = categoryService.findAll();
+        map.put("categoryList",categoryList);
+
+        return new ModelAndView("product/index",map);
+    }
+
+    /**
+     * 保存/更新
+     */
+    @PostMapping("/save")
+    public ModelAndView save(@Valid ProductForm productForm,
+                             BindingResult bindingResult,
+                             Map<String,Object>map){
+        if (bindingResult.hasErrors()){
+            map.put("msg",bindingResult.getFieldError().getDefaultMessage());
+            map.put("url","/seller_lx/seller/product/index");
+            return new ModelAndView("common/error",map);
+        }
+        ProductInfo productInfo = new ProductInfo();
+
+        try {
+            //如果productId为空，说明是新增
+            if (!StringUtils.isEmpty(productForm.getProductId())){
+                productInfo = productService.findOne(productForm.getProductId());
+            }else {
+                productForm.setProductId(KeyUtil.genUniqueKey());
+            }
+            BeanUtils.copyProperties(productForm,productInfo);
+            productService.save(productInfo);
+        } catch (SellException e) {
+            map.put("msg",e.getMessage());
+            map.put("url","/seller_lx/seller/product/index");
             return new ModelAndView("common/error",map);
         }
         map.put("url","/seller_lx/seller/product/list");
