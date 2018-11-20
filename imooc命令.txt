@@ -27,13 +27,13 @@ http://lktalented.natapp1.cc/seller_lx/pay/create
 
 ls -al dist/
 cp -r dist/* /opt/data/wwwroot/sell/
-
+/etc/
 
 设置虚拟机静态IP：
 设置网络连接方式为“桥接网卡”
 进入虚拟机以下文件进行修改：
 vim /etc/sysconfig/network-scripts/ifcfg-eth0
-修改步骤：
+修改步骤：cd
 ONBOOT=yes 这里指系统启动时就启动网络服务
 #BOOTPROTO=dhcp 将动态分配ip地址注释
 BOOTPROTO=static 使用静态ip地址
