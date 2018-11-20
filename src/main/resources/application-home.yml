@@ -13,6 +13,9 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.105
+    port: 6379
 
 logging:
   config: classpath:logback-seller_lx.xml
@@ -25,8 +28,11 @@ wechat:
   notifyUrl: http://lktalented.natapp1.cc/seller_lx/pay/notify
 
 
+
 projectUrl:
   wechatMpAuthorize: http://lktalented.natapp1.cc
+  wechatOpenAuthorize: http://lktalented.natapp1.cc
+  sell: http://lktalented.natapp1.cc
 #  pattern:
 #    console: "%d - %msg%n"
 ##  file: E:\springboot-imooc-logs\sell.log
