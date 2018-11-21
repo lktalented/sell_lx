@@ -28,7 +28,8 @@ wechat:
   mchKey: 06C56A89949D617xxxxxxxxxxx
   keyPath: /var/weixin_cert/h5.p12
   notifyUrl: http://lktalented.natapp1.cc/seller_lx/pay/notify
-
+  templateId:
+    orderStatus: hG_gfAMthst583lGkZlwl26ul0VimlPjk5Vje2nEBYc
 
 projectUrl:
   wechatMpAuthorize: http://lktalented.natapp1.cc

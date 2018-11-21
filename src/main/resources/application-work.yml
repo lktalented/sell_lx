@@ -33,6 +33,8 @@ wechat:
   mchKey: 06C56A89949D617xxxxxxxxxxx
   keyPath: /var/weixin_cert/h5.p12
   notifyUrl: http://lktalented.natapp1.cc/seller_lx/pay/notify
+  templateId:
+    orderStatus: hG_gfAMthst583lGkZlwl26ul0VimlPjk5Vje2nEBYc
 #  pattern:
 #    console: "%d - %msg%n"
 ##  file: E:\springboot-imooc-logs\sell.log
