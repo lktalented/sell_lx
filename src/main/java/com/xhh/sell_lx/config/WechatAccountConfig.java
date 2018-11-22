@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 /**
  * 微信账号配置
  * luokai
@@ -34,7 +36,6 @@ public class WechatAccountConfig {
      */
     private String openAppSecret;
 
-
     /**
      * 商户号
      */
@@ -55,5 +56,9 @@ public class WechatAccountConfig {
      */
     private String notifyUrl;
 
+    /**
+     * 微信模板ID
+     */
+    private Map<String,String> templateId;
 
 }

@@ -15,6 +15,7 @@ import com.xhh.sell_lx.repository.OrderMasterRepository;
 import com.xhh.sell_lx.service.OrderService;
 import com.xhh.sell_lx.service.PayService;
 import com.xhh.sell_lx.service.ProductService;
+import com.xhh.sell_lx.service.PushMessageService;
 import com.xhh.sell_lx.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -52,6 +53,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderDetailRepository orderDetailRepository;
+
+    @Autowired
+    private PushMessageService pushMessageService;
 
     @Override
     @Transactional
@@ -168,6 +172,8 @@ public class OrderServiceImpl implements OrderService {
             log.error("【完结订单】更新失败, orderMaster={}", orderMaster);
             throw new SellException(ResultEnum.ORDER_UPDATE_FAIL);
         }
+        //发送微信模板消息
+        pushMessageService.changeOrderFinishStatus(orderDTO);
         return orderDTO;
     }
 
