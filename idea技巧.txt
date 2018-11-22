@@ -94,16 +94,22 @@ database的关联：
 并且可以方便的重构字段，修改字段名时，同步修改xml，类属性。
 
 断点调试：
+F9            resume programe 恢复程序
+Alt+F10       show execution point 显示执行断点
+F8            Step Over 相当于eclipse的f6      跳到下一步
+F7            Step Into 相当于eclipse的f5就是  进入到代码
+Alt+shift+F7  Force Step Into 这个是强制进入代码
+Shift+F8      Step Out  相当于eclipse的f8跳到下一个断点，也相当于eclipse的f7跳出函数
+Atl+F9        Run To Cursor 运行到光标处
+ctrl+shift+F9   debug运行java类
+alt+F8          表达式求值（选中需要计算的变量，填写java表达式，点击evaluate）
+
 ctrl + F8 打断点
 shift + F9  debug启动
 shift + F10 run启动
-F8 单步运行 step over
-F9 跳至下一断点
+
 ctrl + shift + F8 查看所有断点 条件断点
 mute breakPoints  禁止所有断点 接 F9走完
-
-alt + F8 表达式求值（选中需要计算的变量，填写java表达式，点击evaluate）
-alt + F9 运行到指定行
 
 在参数下F2，可set value ，测试运行结果
 
@@ -160,3 +166,6 @@ manage keymaps - plugins - emacsIDEAs  - AceJumpWord 右键设置快捷方式 （可全局快
 
 ctrl + alt + L : 代码格式化 
 ctrl + alt + B : 进入实现方法
+
+ctrl + R : 全局替换
+ctrl + shift + u ：替换大小写
