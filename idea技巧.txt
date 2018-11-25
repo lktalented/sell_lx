@@ -170,3 +170,7 @@ ctrl + alt + B : 进入实现方法
 ctrl + R : 全局替换
 ctrl + shift + u ：替换大小写
 ctrl + alt + o : 快速清除所有未使用import类
+
+设置序列化ID：
+导入插件：GenerateserialVersionUID
+keymap中设置快捷键：ctrl + shift + s

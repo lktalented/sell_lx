@@ -26,4 +26,5 @@ public class ResultVOUtil {
         resultVO.setCode(code);
         return resultVO;
     }
+
 }

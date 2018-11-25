@@ -9,6 +9,7 @@ import com.xhh.sell_lx.service.ProductService;
 import com.xhh.sell_lx.utils.KeyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -113,6 +114,7 @@ public class SellerProductController {
      * 保存/更新
      */
     @PostMapping("/save")
+    //@CacheEvict(cacheNames = "product",key = "123")
     public ModelAndView save(@Valid ProductForm productForm,
                              BindingResult bindingResult,
                              Map<String,Object>map){

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.xhh.sell_lx.dataobject.mapper.ProductCategoryMapper">
+    <resultMap id="BaseResultMap" type="com.xhh.sell_lx.dataobject.ProductCategory">
+        <id  column="category_id" property="categoryId" jdbcType="INTEGER" />
+        <id  column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <id  column="category_type" property="categoryType" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="selectByCategoryType" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT category_id,category_type,category_name
+        FROM  product_category
+        WHERE category_type = #{category_type,jdbcType=INTEGER}
+    </select>
+</mapper>

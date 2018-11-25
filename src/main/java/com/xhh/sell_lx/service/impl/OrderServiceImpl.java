@@ -9,6 +9,7 @@ import com.xhh.sell_lx.dto.OrderDTO;
 import com.xhh.sell_lx.enums.OrderStatusEnum;
 import com.xhh.sell_lx.enums.PayStatusEnum;
 import com.xhh.sell_lx.enums.ResultEnum;
+import com.xhh.sell_lx.exception.ResponseBankException;
 import com.xhh.sell_lx.exception.SellException;
 import com.xhh.sell_lx.repository.OrderDetailRepository;
 import com.xhh.sell_lx.repository.OrderMasterRepository;
@@ -67,7 +68,8 @@ public class OrderServiceImpl implements OrderService {
         for (OrderDetail orderDetail : orderDTO.getOrderDetailList()){
             ProductInfo productInfo = productService.findOne(orderDetail.getProductId());
             if (productInfo == null){
-                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+                //throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+                throw new ResponseBankException();
             }
             //2.计算订单总价
             orderAmount = productInfo.getProductPrice()
